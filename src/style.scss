@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+  }
+
+.navbar{
+    width: 100vw;
+    background-Color: rgb(219, 173, 44);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 0 20px;
+
+    .buttonContainer{
+        flex-basis: 15%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px 0 20px;
+
+        .navButton{
+            cursor: pointer;
+            margin: 0 5px 0 5px 0;
+        }
+    }
+}
+
+
+.productList{
+    display: flex;
+    flex-wrap: wrap;
+
+    .productBox{
+    background: rgba(236, 234, 234, 0.5);
+    padding: 10px;
+    margin: 5px;
+    width: 250px;
+}}
