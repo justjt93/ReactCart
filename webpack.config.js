@@ -60,16 +60,12 @@ module.exports = {
   },
   plugins: [
     new BrowserSyncPlugin({
-      // browse to http://localhost:3000/ during development,
-      // ./dist directory is being served
       host: "localhost",
       port: 3000,
+      single: true,
       server: {
         baseDir: ["dist"]
       }
-      // proxy: {
-      //     target: 'http://www.example.com/',
-      // },
     })
   ]
 };

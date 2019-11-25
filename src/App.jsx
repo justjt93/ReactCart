@@ -12,22 +12,23 @@ const App = () => {
   const setItemQtyUp = productKey => {
     if (cartContent[productKey]) {
       setCartContent(prevState => {
+        console.log("State before change", prevState);
+
         if (prevState[productKey].qty) {
           prevState[productKey].qty = prevState[productKey].qty + 1;
         } else {
           prevState[productKey] = products[productKey];
           prevState[productKey].qty = 1;
         }
-        console.log("WAS IN", cartContent);
-
-        return prevState;
+        let newCartContent = { ...prevState };
+        return newCartContent;
       });
     } else {
       setCartContent(prevState => {
         prevState[productKey] = products[productKey];
         prevState[productKey].qty = 1;
-        console.log("WASNT YET", cartContent);
-        return prevState;
+        let newCartContent = { ...prevState };
+        return newCartContent;
       });
     }
   };
@@ -39,15 +40,12 @@ const App = () => {
       } else {
         delete prevState[productKey];
       }
-      console.log("DELETE", cartContent);
-
-      return prevState;
+      let newCartContent = { ...prevState };
+      return newCartContent;
     });
   };
 
-  useEffect(() => {
-    console.log(cartContent);
-  }, [cartContent]);
+  useEffect(() => {}, [cartContent]);
 
   const NotFound = () => {
     return <h1>Not Found</h1>;

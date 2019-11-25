@@ -1,9 +1,11 @@
 * {
     box-sizing: border-box;
+    margin: 0;
   }
 
 .navbar{
     width: 100vw;
+    height: 50px;
     background-Color: rgb(219, 173, 44);
     display: flex;
     justify-content: space-between;
@@ -11,15 +13,26 @@
     padding: 0 20px 0 20px;
 
     .buttonContainer{
-        flex-basis: 15%;
+        flex-basis: 16%;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0 20px 0 20px;
 
-        .navButton{
-            cursor: pointer;
-            margin: 0 5px 0 5px 0;
+        .navLink{  
+            text-decoration: none; 
+            color: rgb(19, 3, 3);     
+            font-size: 20px;
+            .navButton{
+                cursor: pointer;
+                margin: 0 5px 0 5px 0;
+                padding: 10px 3px;
+                
+                &:hover {
+                color: rgba(50, 61, 7, 0.644);
+                text-decoration: underline;
+                }
+            }
         }
     }
 }
@@ -30,8 +43,81 @@
     flex-wrap: wrap;
 
     .productBox{
-    background: rgba(236, 234, 234, 0.5);
-    padding: 10px;
-    margin: 5px;
-    width: 250px;
-}}
+        background: rgba(236, 234, 234, 0.5);
+        padding: 10px;
+        margin: 5px;
+        width: 250px;
+        border: 2px solid rgba(219, 173, 44, 0.472);
+        box-shadow: 3px 3px 10px 1px #ccc; 
+
+        display: flex;
+        flex-flow: column wrap;
+        align-content: center;
+        text-align: center;
+
+        img{
+            width: 200px;
+            height: 250px;
+            margin: 5px;
+        }
+        .btnContainer{
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0px;
+            button{
+                cursor: pointer;
+                margin: 0 5px 0 5px 0;
+                padding: 10px 3px;
+                box-shadow: 3px 3px 10px 1px #ccc;
+            }
+        }
+    }
+}
+
+.checkoutTableWrap{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+
+
+
+    .checkoutTable{
+    margin-top: 10px;
+    border-collapse: collapse;
+    width: 80%;
+    text-align: center;
+
+    .qtyCellWrap{   
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .qtyCell{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+}
+.checkoutTotal{
+    font-size: 24px;
+    text-decoration: underline;
+}
+    th{
+        
+        padding-top: 12px;
+        padding-bottom: 12px;
+        font-size: 20px;
+        background-color: rgb(230, 230, 230);
+        color: rgb(41, 38, 38);
+    }
+    td,th{
+        border: 1px solid rgba(219, 173, 44, 0.472);
+        padding: 8px;
+    }
+    tr:nth-child(even){background-color: #f2f2f2;}
+    tr:hover {background-color: #ddd;}
+    img{
+        width: 50px;
+    }
+
+}
+}
